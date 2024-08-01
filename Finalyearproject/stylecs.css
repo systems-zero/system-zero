@@ -1,0 +1,214 @@
+/* this css file only used for contact us page */
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: Century;
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(image/pgroom.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+    text-align: center;
+}
+
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 1px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size: 17px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.5 ease;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color:#000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000;
+}
+
+.logo img{
+    float: left;
+    width: 80px;
+    height: auto;
+}
+
+
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+ul button.btnlog{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+ul button.btnlog:hover{
+    background: #fff;
+    color: green;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:floralwhite;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #fff;
+    color: #000;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f80a06;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.container {
+    position: relative;
+    top: 50px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
+}
+h1{
+    color: antiquewhite;
+}
+h2 {
+    margin-bottom: 20px;
+    color: #30ca4f;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: rgb(70, 91, 193);
+    padding: 12px 20px;
+    border: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.switch-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Styling for the register form container */
+.register-container {
+    display: none;
+}
+
+.footer {
+    position: relative;
+    top: 90px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
+}
+.footer p {
+    font-weight: bold;
+    color: yellow;
+}
+.lo img{
+    position: absolute;
+    top: 100px;
+    left: 750px;
+}

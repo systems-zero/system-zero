@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bgb">
+    <div class="logo">
+        <img src="image/logo2.png">
+    </div>
+    <div class="main">
+        <ul>
+            <li class="active"><a href="home.html">HOME</a></li>
+            <li><a href="activity.html">My Activities</a></li>
+            <li><a href="profileh.php">Profile</a></li>
+            <li><a href="contactus2.html">Contact us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">More</a>
+                <div class="dropdown-content">
+                    <a href="loggout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
+        <form class="search-bar" action="/search" method="GET">
+            <input type="text" placeholder="Search..." name="query">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Search results -->
+    <div class="pd">
+        <h2>Search Results</h2>
+        <ul>
+            {% for pg in results %}
+            <li>
+                <div class="details">
+                    <span class="titles">{{ pg.name }}</span>
+                    <span class="location">Location: {{ pg.location }}</span>
+                    <span class="rating">Rating: {{ pg.rating }}</span>
+                </div>
+            </li>
+            {% else %}
+            <li>No results found</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

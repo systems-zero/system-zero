@@ -1,0 +1,129 @@
+/* this css file used for about html file */
+
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: Century;
+    text-align: center;
+}
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(image/pgroom.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+
+    
+}
+
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 1px;
+    min-height: 400px;
+    margin-right: 60px;
+    font-size: 17px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.5 ease;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color:#000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000;
+}
+
+.logo img{
+    float: left;
+    width: 80px;
+    height: auto;
+}
+
+
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title{
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.title h1{
+    color: rgb(8, 8, 8);
+    font-size: 50px;
+}
+
+ul button.btnlog{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+ul button.btnlog:hover{
+    background: #fff;
+    color: green;
+}
+
+/* about text aline */
+
+.container2 {
+    position: relative;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 {
+    color: black;
+    font-size: 60px;
+}
+ h2 {
+    color: #e0a85a;
+    padding: auto;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0px;
+    font-size: 20px;
+    color: beige;
+}
+.lo img{
+    position: absolute;
+    top: 100px;
+    left: 750px;
+}

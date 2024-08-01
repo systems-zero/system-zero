@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG-GO</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function updatePrice() {
+            const sharingType = document.querySelector('.sharing-type').value;
+            const priceElement = document.querySelector('.price');
+            
+            let price;
+            switch (sharingType) {
+                case 'single':
+                    price = '8000rs';
+                    break;
+                case 'double':
+                    price = '6000rs';
+                    break;
+                case 'triple':
+                    price = '5000rs';
+                    break;
+                default:
+                    price = '8000rs';
+            }
+            
+            priceElement.innerText = price;
+        }
+
+        function bookProduct() {
+            // Get the product details
+            const name = document.querySelector('.titles').innerText;
+            const price = document.querySelector('.price').innerText;
+            const facilities = document.querySelector('.facilities').innerText;
+            const location = document.querySelector('.location').innerText;
+            const rating = document.querySelector('.rating').innerText;
+            const rooms = document.querySelector('.rooms').innerText;
+            const sharingType = document.querySelector('.sharing-type').value;
+            
+            // Create a FormData object
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('price', price);
+            formData.append('facilities', facilities);
+            formData.append('location', location);
+            formData.append('rating', rating);
+            formData.append('sharingType', sharingType);
+            
+            // Send the booking information to the PHP script
+            fetch('book.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Store booking confirmation message in localStorage
+                localStorage.setItem('bookingConfirmation', data);
+                
+                // Redirect to activity.html
+                window.location.href = 'activityh.php';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body class="bgb">
+    <div class="logo">
+        <img src="image/logo2.png">
+    </div>
+    <div class="main">
+        <ul>
+            <li class="active"><a href="home.html">HOME</a></li>
+            <li><a href="activityh.php">My Activities</a></li>
+            <li><a href="profileh.php">Profile</a></li>
+            <li><a href="contactus2.html">Contact us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">More</a>
+                <div class="dropdown-content">
+                    <a href="loggout.php">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- img slide show -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="image/rr1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/rr2.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/rr3.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/rr4.jpg" style="width:100%">
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <script src="script2.js"></script>
+    
+    <div class="product-container">
+        <div class="product-details">
+            <div class="titles">Ronho PG</div>
+            <div class="price">10000rs </div>
+            <label for="sharing-type" class="stlabel">Select Sharing Type:</label>
+            <select class="sharing-type" onchange="updatePrice()">
+                <option value="single">Single Sharing</option>
+                <option value="double">Double Sharing</option>
+                <option value="triple">Triple Sharing</option>
+            </select>
+            <div class="facilities">Facilities: Wifi, Food, Washing machine, CCTV</div>
+            <div class="location">Location: Hebbala, Bengaluru</div>
+            <div class="rating">Rating: 4.7/5</div>
+            <div class="rooms">Rooms available: 4</div>
+        </div>
+        <button class="book-button" onclick="bookProduct()">Book Now</button>
+    </div>
+</body>
+</html>

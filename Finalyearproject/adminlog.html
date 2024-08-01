@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="stylelogres.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="image/logo2.png" width="200px">
+    </div>
+    <div class="container">
+        <h2>Admin Login</h2>
+        <form action="adminlog.php" method="post" id="loginForm">
+            <div class="form-group">
+                <label for="username">Admin name</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="userType">Login as</label>
+                <select id="userType" name="userType" required>
+                    <option  value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function switchToLogin() {
+            document.querySelector('.container').style.display = 'block';
+            document.querySelector('.register-container').style.display = 'none';
+        }
+
+        // Initialize with the login form visible
+        // document.querySelector('.register-container').style.display = 'none';
+
+        // Redirect to admin login form
+        document.getElementById('userType').addEventListener('change', function() {
+            if (this.value === 'user') {
+                window.location.href = 'logregis2admin.html';
+            }
+        });
+    </script>
+    </body>
+    </html>
